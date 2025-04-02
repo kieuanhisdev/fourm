@@ -1,0 +1,4 @@
+package vn.id.kieuanhdev.fourm.entity;
+
+public class Role {
+}

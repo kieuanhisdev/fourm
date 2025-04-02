@@ -1,0 +1,4 @@
+package vn.id.kieuanhdev.fourm.security;
+
+public class CustomUserDetailsService {
+}
