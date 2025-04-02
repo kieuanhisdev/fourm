@@ -30,7 +30,13 @@ public class SpringSecurity {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/register/**").permitAll()
                         .requestMatchers("/index").permitAll()
-                        .requestMatchers("/users").hasRole("ADMIN")
+//                        .requestMatchers("/users").hasRole("ADMIN")
+                        .requestMatchers("/users").authenticated() // Bất kỳ ai đăng nhập đều vào được
+
+                )
+                .oauth2Login(oauth2 -> oauth2
+                        .loginPage("/login")
+                        .defaultSuccessUrl("/users", true)
                 )
                 .formLogin(form -> form
                         .loginPage("/login")
